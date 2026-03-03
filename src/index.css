@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 224 100% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 100% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 100% 8%;
+
+    --primary: 224 100% 13%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 224 100% 13%;
+
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 224 100% 13%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --status-free: 142 76% 36%;
+    --status-occupied: 0 84% 60%;
+    --status-reserved: 45 93% 47%;
+    --status-blocked: 0 0% 20%;
+    --status-maintenance: 270 60% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(224 100% 13%), hsl(224 80% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 50%), hsl(224 100% 13%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 20% 98%));
+
+    --shadow-sm: 0 1px 3px hsl(224 100% 13% / 0.06);
+    --shadow-md: 0 4px 12px hsl(224 100% 13% / 0.08);
+    --shadow-lg: 0 8px 30px hsl(224 100% 13% / 0.12);
+    --shadow-glow: 0 0 20px hsl(210 100% 50% / 0.15);
+
+    --sidebar-background: 224 100% 13%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 80% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 224 60% 20%;
+    --sidebar-ring: 210 100% 50%;
+  }
+
+  .dark {
+    --background: 224 40% 6%;
+    --foreground: 0 0% 95%;
+    --card: 224 30% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 224 30% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 224 30% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 224 20% 15%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 224 20% 18%;
+    --input: 224 20% 18%;
+    --ring: 210 100% 50%;
+    --sidebar-background: 224 40% 4%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 30% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 224 20% 15%;
+    --sidebar-ring: 210 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border;
+    box-shadow: var(--shadow-md);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .status-free {
+    background-color: hsl(var(--status-free));
+  }
+  .status-occupied {
+    background-color: hsl(var(--status-occupied));
+  }
+  .status-reserved {
+    background-color: hsl(var(--status-reserved));
+  }
+  .status-blocked {
+    background-color: hsl(var(--status-blocked));
+  }
+  .status-maintenance {
+    background-color: hsl(var(--status-maintenance));
+  }
+
+  .text-status-free {
+    color: hsl(var(--status-free));
+  }
+  .text-status-occupied {
+    color: hsl(var(--status-occupied));
+  }
+  .text-status-reserved {
+    color: hsl(var(--status-reserved));
+  }
+  .text-status-blocked {
+    color: hsl(var(--status-blocked));
+  }
+  .text-status-maintenance {
+    color: hsl(var(--status-maintenance));
+  }
+}
